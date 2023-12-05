@@ -3,7 +3,7 @@ const express = require("express");
 // const router= express.Router();
 const app = express();
 
-const PORT = 1235;
+const PORT = process.env.PORT || 1235;
 
 app.use(express.json());
 
