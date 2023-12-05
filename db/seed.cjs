@@ -1,10 +1,10 @@
-const client=require('./client.cjs');
+const client = require('./client.cjs');
 
 
-const seedData= async () =>{
+const seedData = async () => {
   console.log(`seeding the data`);
 
-  try{
+  try {
     await client.query(`
     INSERT INTO "Robots" ("Name", "ModelNumber", "Company", "ImageUrl", "MonthsBeforeBreakdown", "IsSafeAroundChildren", "ReleaseDate")
     VALUES 
@@ -56,15 +56,13 @@ const seedData= async () =>{
     `);
 
 
-
-
-
     console.log(`robot data created`);
 
-  }catch(err){
+  } catch (err) {
     console.log(err);
-  };
-
+  } finally {
+    client.end()
+  }
 }
 
 module.exports = seedData;
