@@ -5,7 +5,7 @@ const getRobots = async() =>{
 
     try{
       const result = await client.query (`
-      SELECT * FROM robots
+      SELECT * FROM "Robots"
       `);
       console.log(result.rows);
       return result.rows;
